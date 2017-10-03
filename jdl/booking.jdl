@@ -1,0 +1,41 @@
+//booking service entities
+entity TravelReservation {
+    tourCode UUID
+    numberOfPersons Integer
+    needVisa Boolean
+    //oneToMany flightreservation
+    //oneToMany hoteReservation
+    clientConfirmed Boolean
+    providerConfirmed Boolean
+    agencyConfirmed Boolean
+    notes String
+}
+
+relationship OneToMany {
+    TravelReservation{hotelReservation}
+    to HotelReservation{flightReservation}
+}
+
+relationship OneToMany {
+    TravelReservation{flightReservation(flightCode)}
+    to FlightReservation{FlightReservation}
+}
+
+entity FlightReservation {
+	flightCode String
+    personCount Integer
+    departureTime ZonedDateTime
+    airportOfDeparture String
+    airportOfArrival String
+    arrivalTime ZonedDateTime
+}
+
+entity HotelReservation {
+	hotelName String
+    typeOfRoom String
+    personCount Integer
+    checkInTime ZonedDateTime
+    checkOutTime ZonedDateTime
+}
+
+microservice * with catalog
