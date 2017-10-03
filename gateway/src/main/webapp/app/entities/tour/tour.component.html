@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span jhiTranslate="gatewayApp.tour.home.title">Tours</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tour" [routerLink]="['/', { outlets: { popup: ['tour-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="gatewayApp.tour.home.createLabel">
+            Create new Tour
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tours">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.code">Code</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.name">Name</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.numberOfDays">Number Of Days</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.numberOfNights">Number Of Nights</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.description">Description</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.timeOfDeparture">Time Of Departure</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.timeOfReturn">Time Of Return</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.price">Price</span></th>
+            <th><span jhiTranslate="gatewayApp.tour.capacity">Capacity</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tour of tours ;trackBy: trackId">
+                <td><a [routerLink]="['../tour', tour.id ]">{{tour.id}}</a></td>
+                <td>{{tour.code}}</td>
+                <td>{{tour.name}}</td>
+                <td>{{tour.numberOfDays}}</td>
+                <td>{{tour.numberOfNights}}</td>
+                <td>{{tour.description}}</td>
+                <td>{{tour.timeOfDeparture | date:'medium'}}</td>
+                <td>{{tour.timeOfReturn | date:'medium'}}</td>
+                <td>{{tour.price}}</td>
+                <td>{{tour.capacity}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tour', tour.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tour/'+ tour.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tour/'+ tour.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

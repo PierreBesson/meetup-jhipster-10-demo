@@ -1,0 +1,57 @@
+
+<div *ngIf="tour">
+    <h2><span jhiTranslate="gatewayApp.tour.detail.title">Tour</span> {{tour.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gatewayApp.tour.code">Code</span></dt>
+        <dd>
+            <span>{{tour.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.name">Name</span></dt>
+        <dd>
+            <span>{{tour.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.numberOfDays">Number Of Days</span></dt>
+        <dd>
+            <span>{{tour.numberOfDays}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.numberOfNights">Number Of Nights</span></dt>
+        <dd>
+            <span>{{tour.numberOfNights}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.description">Description</span></dt>
+        <dd>
+            <span>{{tour.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.timeOfDeparture">Time Of Departure</span></dt>
+        <dd>
+            <span>{{tour.timeOfDeparture | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.timeOfReturn">Time Of Return</span></dt>
+        <dd>
+            <span>{{tour.timeOfReturn | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.price">Price</span></dt>
+        <dd>
+            <span>{{tour.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.tour.capacity">Capacity</span></dt>
+        <dd>
+            <span>{{tour.capacity}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tour/'+ tour.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

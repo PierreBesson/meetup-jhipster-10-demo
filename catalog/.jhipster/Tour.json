@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numberOfDays",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numberOfNights",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timeOfDeparture",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "timeOfReturn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "capacity",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20171003215534",
+    "entityTableName": "tour",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "microserviceName": "catalog"
+}

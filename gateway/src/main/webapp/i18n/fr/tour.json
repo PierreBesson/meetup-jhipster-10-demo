@@ -1,0 +1,33 @@
+{
+    "gatewayApp": {
+        "tour" : {
+            "home": {
+                "title": "Tours",
+                "createLabel": "Créer un nouveau Tour",
+                "createOrEditLabel": "Créer ou éditer un Tour"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Tour {{ id }} ?"
+            },
+            "detail": {
+                "title": "Tour"
+            },
+            "code": "Code",
+            "name": "Name",
+            "numberOfDays": "Number Of Days",
+            "numberOfNights": "Number Of Nights",
+            "description": "Description",
+            "timeOfDeparture": "Time Of Departure",
+            "timeOfReturn": "Time Of Return",
+            "price": "Price",
+            "capacity": "Capacity"
+        }
+    },
+    "catalogApp": {
+        "tour" : {
+            "created": "Un nouveau Tour a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Tour avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Tour avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

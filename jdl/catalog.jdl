@@ -1,0 +1,13 @@
+entity Tour {
+	code String,
+	name String,
+    numberOfDays Integer,
+    numberOfNights Integer,
+    description String,
+    timeOfDeparture ZonedDateTime,
+    timeOfReturn ZonedDateTime,
+    price Integer,
+    capacity Integer
+}
+
+microservice * with catalog

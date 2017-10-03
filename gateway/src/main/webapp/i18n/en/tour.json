@@ -1,0 +1,33 @@
+{
+    "gatewayApp": {
+        "tour" : {
+            "home": {
+                "title": "Tours",
+                "createLabel": "Create a new Tour",
+                "createOrEditLabel": "Create or edit a Tour"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Tour {{ id }}?"
+            },
+            "detail": {
+                "title": "Tour"
+            },
+            "code": "Code",
+            "name": "Name",
+            "numberOfDays": "Number Of Days",
+            "numberOfNights": "Number Of Nights",
+            "description": "Description",
+            "timeOfDeparture": "Time Of Departure",
+            "timeOfReturn": "Time Of Return",
+            "price": "Price",
+            "capacity": "Capacity"
+        }
+    },
+    "catalogApp": {
+        "tour" : {
+            "created": "A new Tour is created with identifier {{ param }}",
+            "updated": "A Tour is updated with identifier {{ param }}",
+            "deleted": "A Tour is deleted with identifier {{ param }}"
+        }
+    }
+}
