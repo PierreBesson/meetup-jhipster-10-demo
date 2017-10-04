@@ -8,6 +8,7 @@
             "entities": {
                 "main": "数据",
                 "tour": "Tour",
+                "travelReservation": "Travel Reservation",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

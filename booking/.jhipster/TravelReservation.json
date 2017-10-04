@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tourCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numberOfPersons",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "needVisa",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "clientConfirmed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "providerConfirmed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "agencyConfirmed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171004132242",
+    "entityTableName": "travel_reservation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "microserviceName": "booking"
+}

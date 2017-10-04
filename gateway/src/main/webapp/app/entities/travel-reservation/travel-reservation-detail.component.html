@@ -1,0 +1,49 @@
+
+<div *ngIf="travelReservation">
+    <h2><span jhiTranslate="gatewayApp.travelReservation.detail.title">Travel Reservation</span> {{travelReservation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gatewayApp.travelReservation.tourCode">Tour Code</span></dt>
+        <dd>
+            <span>{{travelReservation.tourCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.travelReservation.numberOfPersons">Number Of Persons</span></dt>
+        <dd>
+            <span>{{travelReservation.numberOfPersons}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.travelReservation.needVisa">Need Visa</span></dt>
+        <dd>
+            <span>{{travelReservation.needVisa}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.travelReservation.clientConfirmed">Client Confirmed</span></dt>
+        <dd>
+            <span>{{travelReservation.clientConfirmed}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.travelReservation.providerConfirmed">Provider Confirmed</span></dt>
+        <dd>
+            <span>{{travelReservation.providerConfirmed}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.travelReservation.agencyConfirmed">Agency Confirmed</span></dt>
+        <dd>
+            <span>{{travelReservation.agencyConfirmed}}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.travelReservation.notes">Notes</span></dt>
+        <dd>
+            <span>{{travelReservation.notes}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'travel-reservation/'+ travelReservation.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

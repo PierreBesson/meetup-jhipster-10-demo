@@ -1,0 +1,60 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTravelReservationLabel" jhiTranslate="gatewayApp.travelReservation.home.createOrEditLabel">Create or edit a Travel Reservation</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!travelReservation.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="travelReservation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.tourCode" for="field_tourCode">Tour Code</label>
+            <input type="text" class="form-control" name="tourCode" id="field_tourCode"
+                [(ngModel)]="travelReservation.tourCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.numberOfPersons" for="field_numberOfPersons">Number Of Persons</label>
+            <input type="number" class="form-control" name="numberOfPersons" id="field_numberOfPersons"
+                [(ngModel)]="travelReservation.numberOfPersons"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.needVisa" for="field_needVisa">Need Visa</label>
+            <input type="checkbox" class="form-control" name="needVisa" id="field_needVisa"
+                [(ngModel)]="travelReservation.needVisa"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.clientConfirmed" for="field_clientConfirmed">Client Confirmed</label>
+            <input type="checkbox" class="form-control" name="clientConfirmed" id="field_clientConfirmed"
+                [(ngModel)]="travelReservation.clientConfirmed"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.providerConfirmed" for="field_providerConfirmed">Provider Confirmed</label>
+            <input type="checkbox" class="form-control" name="providerConfirmed" id="field_providerConfirmed"
+                [(ngModel)]="travelReservation.providerConfirmed"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.agencyConfirmed" for="field_agencyConfirmed">Agency Confirmed</label>
+            <input type="checkbox" class="form-control" name="agencyConfirmed" id="field_agencyConfirmed"
+                [(ngModel)]="travelReservation.agencyConfirmed"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gatewayApp.travelReservation.notes" for="field_notes">Notes</label>
+            <input type="text" class="form-control" name="notes" id="field_notes"
+                [(ngModel)]="travelReservation.notes"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

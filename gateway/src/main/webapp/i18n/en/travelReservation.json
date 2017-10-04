@@ -1,0 +1,31 @@
+{
+    "gatewayApp": {
+        "travelReservation" : {
+            "home": {
+                "title": "Travel Reservations",
+                "createLabel": "Create a new Travel Reservation",
+                "createOrEditLabel": "Create or edit a Travel Reservation"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Travel Reservation {{ id }}?"
+            },
+            "detail": {
+                "title": "Travel Reservation"
+            },
+            "tourCode": "Tour Code",
+            "numberOfPersons": "Number Of Persons",
+            "needVisa": "Need Visa",
+            "clientConfirmed": "Client Confirmed",
+            "providerConfirmed": "Provider Confirmed",
+            "agencyConfirmed": "Agency Confirmed",
+            "notes": "Notes"
+        }
+    },
+    "bookingApp": {
+        "travelReservation" : {
+            "created": "A new Travel Reservation is created with identifier {{ param }}",
+            "updated": "A Travel Reservation is updated with identifier {{ param }}",
+            "deleted": "A Travel Reservation is deleted with identifier {{ param }}"
+        }
+    }
+}
