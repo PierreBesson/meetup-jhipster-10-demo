@@ -1,0 +1,51 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jhipster-logstash
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jhipster-logstash
+    spec:
+      containers:
+      - image: jhipster/jhipster-logstash:v2.2.1
+        name: jhipster-logstash
+        env:
+        - name: INPUT_TCP_PORT
+          value: "5000"
+        - name: INPUT_UDP_PORT
+          value: "5000"
+        - name: LOGSTASH_DEBUG
+          value: "false"
+        ports:
+        - containerPort: 5000
+        - containerPort: 9600
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jhipster-logstash
+  namespace: default
+  labels:
+    app: jhipster-logstash
+spec:
+  ports:
+  - name: "5000-udp"
+    port: 5000
+    protocol: UDP
+    targetPort: 5000
+  - name: "5000-tcp"
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  - name: "9600"
+    port: 9600
+    protocol: TCP
+    targetPort: 9600
+  selector:
+    app: jhipster-logstash
+

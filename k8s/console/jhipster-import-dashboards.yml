@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jhipster-import-dashboards
+  namespace: default
+spec:
+  template:
+    metadata:
+      name: jhipster-import-dashboards
+    spec:
+      containers:
+      - image: jhipster/jhipster-import-dashboards:v2.2.1
+        name: jhipster-import-dashboards
+      restartPolicy: Never

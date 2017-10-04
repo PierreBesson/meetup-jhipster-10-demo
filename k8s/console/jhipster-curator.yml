@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jhipster-curator
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jhipster-curator
+    spec:
+      containers:
+      - image: jhipster/jhipster-curator:v2.2.1
+        name: jhipster-curator
+        env:
+        - name: UNIT_COUNT
+          value: "14"
+        - name: UNIT
+          value: days
+      restartPolicy: Always
