@@ -13,3 +13,8 @@ eureka:
     client:
         service-url:
             defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+
+# Enable /management/logfile endpoint for all apps
+logging:
+    path: /home/pbesson/tmp-logs
+    file: ${spring.application.name}.log
